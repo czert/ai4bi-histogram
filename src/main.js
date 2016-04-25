@@ -27,18 +27,18 @@ export default function main() {
     const y = d3.scale.ordinal().rangeRoundBands([0, height], .1)
 
     const xAxis = d3.svg.axis()
-            .scale(x)
-            .orient('top')
-            .ticks(6)
+        .scale(x)
+        .orient('top')
+        .ticks(6)
 
     const negative = d => value_accessor(d) < 0
 
 
     const svg = d3.select('body').append('svg')
-            .attr('width', width + margin.left + margin.right)
-            .attr('height', height + margin.top + margin.bottom)
-            .append('g')
-            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
 
     x.domain(d3.extent(data, value_accessor))
